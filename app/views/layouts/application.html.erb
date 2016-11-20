@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | GetsuKami</title>
+    <title><%= full_title(yield(:title)) %></title>
+    <!-- call helper method, full_title get title -->
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
