@@ -37,18 +37,22 @@
 .form_row{
   margin-top: 190px;
   overflow-y: auto;
+  p{
+    margin-left: 350px;
+    margin-top: 20px;
+  }
 }
 
 
 input, .form-control{
   width: 60%;
-  margin-left: 450px;
+  margin-left: 280px;
   margin-top: 10px;
 }
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 30%;
-  margin-left: 550px;
+  margin-left: 350px;
   margin-bottom: 15px;
   @include box_sizing;
 }
