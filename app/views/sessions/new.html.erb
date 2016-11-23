@@ -7,6 +7,11 @@
       
       <%= f.email_field :email, get_form_hash("form-control","Enter email") %>
       <%= f.password_field :password , get_form_hash("form-control","Password")%>
+
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+     		<%= f.check_box :remember_me %>
+    	  <span>Remember me on this computer</span>
+     	<% end %>
       
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
