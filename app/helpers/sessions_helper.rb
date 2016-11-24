@@ -1,5 +1,16 @@
 module SessionsHelper
 
+# 重定向到存储的地址或者默认地址
+	def redirect_back_or(default)
+		redirect_to(session[:forwarding_url] || default)
+		session.delete(:forwarding_url)
+	end
+
+# 存储后面需要使用的地址,只存储get请求的.
+	def store_location
+		session[:forwarding_url] = request.original_url if request.get?
+	end
+
 # log in user
 	def log_in(user)
 		session[:user_id] = user.id
@@ -47,6 +58,10 @@ module SessionsHelper
 		forget(current_user)
 		session.delete(:user_id) #delete session
 		@current_user = nil
+	end
+
+	def current_user?(user)
+		user == current_user
 	end
 
 end

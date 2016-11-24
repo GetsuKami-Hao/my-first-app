@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
 
 	has_secure_password       
-	validates :password, presence: true, length: { in: 6..20 }             
+	validates :password, presence: true, length: { in: 6..20 } , allow_nil: true            
 
 
 	def remember
