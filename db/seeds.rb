@@ -24,3 +24,9 @@ User.create!(name: "GetsuKami", email: "example@railstutorial.org" ,
 							activated: true,
 							activated_at: Time.now)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(5)
+  users.each { |user| user.microposts.create!(content: content) }
+end
